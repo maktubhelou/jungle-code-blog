@@ -11,7 +11,7 @@ const ContentStyles = styled.main`
 `
 
 export const Layout = ({ children }) => {
-    const { title, description, authorBio, siteUrl } = useSiteMetadata()
+    const { title, description, authorBio } = useSiteMetadata()
     return (
         <>
             <Hero siteTitle={title} siteDescription={description} authorBio={authorBio} />

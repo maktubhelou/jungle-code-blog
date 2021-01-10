@@ -3,16 +3,9 @@ import React from 'react';
 
 import Code from './src/components/Code'
 
-const primaryDark = "#003d34"
-const secondaryDark = "#00787a"
-const primaryAccent = "#00b349"
-const secondaryAccent = "#94ebd8"
-const primaryHighlight = "#00b349"
-const primaryWhite = "#ffffff"
-
 const components = {
     h2: ({ children }) => (
-        <h2 style={{ color: primaryAccent }}>{children}</h2>
+        <h2 style={{ color: `var(--secondary-dark)` }}>{children}</h2>
     ),
     'p.inlineCode': props => (
         <code style={{ backgroundColor: 'lightgray' }} {...props} />
