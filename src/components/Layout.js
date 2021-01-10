@@ -7,7 +7,6 @@ import Hero from './Hero'
 const ContentStyles = styled.main`
   width: 800px;
   margin: 0 auto;
-  padding: 10rem 0;
 `
 
 export const Layout = ({ children }) => {

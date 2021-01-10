@@ -9,6 +9,7 @@ import { useSiteMetadata } from '../hooks/useSiteMetadata'
 const IndexWrapper = styled.main``;
 
 const StyledH1 = styled.h1`
+  font-size: ${props => props.index === 0 ? "3.6em" : "2em"};
   text-decoration: underline;
 `;
 
@@ -47,7 +48,7 @@ export default ({ data }) => {
           siteLocale={siteLocale}
           twitterUsername={twitterUsername}
         />
-        {data.allMdx.nodes.map(({ excerpt, frontmatter, fields }) => (
+        {data.allMdx.nodes.map(({ excerpt, frontmatter, fields }, index) => (
           <PostWrapper>
             <Link to={fields.slug}>
               {!!frontmatter.cover ? (
@@ -57,7 +58,7 @@ export default ({ data }) => {
 
               ) : null}
               <br />
-              <StyledH1>{frontmatter.title}</StyledH1>
+              <StyledH1 index={index}>{frontmatter.title}</StyledH1>
               <Date>{frontmatter.date}</Date>
               <p>{excerpt}</p>
             </Link>
