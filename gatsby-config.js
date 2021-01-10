@@ -1,12 +1,19 @@
 const siteMetadata = {
     title: `Jungle Code`,
-    description: `A blog about my coding journey at the Mouth of the Mekong.`
+    description: `A blog about my coding journey at the Mouth of the Mekong.`,
+    image: './default-site-image.jpg',
+    siteUrl: 'https://junglecode.blog',
+    siteLanguage: `en-GB`,
+    siteLocale: `en-gb`,
+    twitterUsername: `@maktubhelou`,
+    authorName: `Mark Evans`
 }
 
 module.exports = {
     siteMetadata,
     plugins: [
         `gatsby-plugin-styled-components`,
+        `gatsby-plugin-react-helmet`,
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
         {

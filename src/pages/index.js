@@ -2,7 +2,9 @@ import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
 import styled from 'styled-components';
+import SEO from 'react-seo-component';
 import { Layout } from '../components/Layout';
+import { useSiteMetadata } from '../hooks/useSiteMetadata'
 
 const IndexWrapper = styled.main``;
 
@@ -13,9 +15,27 @@ const Image = styled(Img)`
 `;
 
 export default ({ data }) => {
+  const {
+    description,
+    title,
+    image,
+    siteUrl,
+    siteLanguage,
+    siteLocale,
+    twitterUsername,
+  } = useSiteMetadata()
   return (
     <IndexWrapper>
       <Layout>
+        <SEO
+          title={title}
+          description={description}
+          image={`${siteUrl}${image}`}
+          pathname={siteUrl}
+          siteLanguage={siteLanguage}
+          siteLocale={siteLocale}
+          twitterUsername={twitterUsername}
+        />
         {data.allMdx.nodes.map(({ excerpt, frontmatter, fields }) => (
           <PostWrapper>
             <Link to={fields.slug}>
