@@ -12,6 +12,7 @@ const PostWrapper = styled.div``;
 
 const Image = styled(Img)`
   border-radius: 5px;
+  max-height: 20vh;
 `;
 
 const Date = styled.p`
