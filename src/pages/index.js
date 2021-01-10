@@ -8,7 +8,13 @@ import { useSiteMetadata } from '../hooks/useSiteMetadata'
 
 const IndexWrapper = styled.main``;
 
-const PostWrapper = styled.div``;
+const StyledH1 = styled.h1`
+  text-decoration: underline;
+`;
+
+const PostWrapper = styled.div`
+  margin: 5em auto;
+`;
 
 const Image = styled(Img)`
   border-radius: 5px;
@@ -48,8 +54,10 @@ export default ({ data }) => {
                 <Image
                   sizes={frontmatter.cover.childImageSharp.sizes}
                 />
+
               ) : null}
-              <h1>{frontmatter.title}</h1>
+              <br />
+              <StyledH1>{frontmatter.title}</StyledH1>
               <Date>{frontmatter.date}</Date>
               <p>{excerpt}</p>
             </Link>
