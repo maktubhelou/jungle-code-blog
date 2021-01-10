@@ -5,8 +5,9 @@ import { useSiteMetadata } from '../hooks/useSiteMetadata'
 import Hero from './Hero'
 
 const ContentStyles = styled.main`
-  width: 800px;
+  max-width: 800px;
   margin: 0 auto;
+  padding: 2em;
 `
 
 export const Layout = ({ children }) => {
