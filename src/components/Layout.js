@@ -2,19 +2,22 @@ import React from 'react';
 import styled from 'styled-components'
 
 import { useSiteMetadata } from '../hooks/useSiteMetadata'
-import { Header } from './Header'
+import Hero from './Hero'
 
-const AppStyles = styled.main`
+const ContentStyles = styled.main`
   width: 800px;
   margin: 0 auto;
+  padding: 10rem 0;
 `
 
 export const Layout = ({ children }) => {
-    const { title, description } = useSiteMetadata()
+    const { title, description, authorBio, siteUrl } = useSiteMetadata()
     return (
-        <AppStyles>
-            <Header siteTitle={title} siteDescription={description} />
-            {children}
-        </AppStyles>
+        <>
+            <Hero siteTitle={title} siteDescription={description} authorBio={authorBio} />
+            <ContentStyles>
+                {children}
+            </ContentStyles>
+        </>
     )
 }

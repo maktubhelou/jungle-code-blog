@@ -1,9 +1,31 @@
 import { graphql, Link } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React from 'react';
+import styled from 'styled-components';
 import SEO from 'react-seo-component'
 import { Layout } from '../components/Layout'
 import { useSiteMetadata } from '../hooks/useSiteMetadata'
+
+const StyledNavButton = styled.li`
+    padding: 0.2em 3em;
+    margin: 1em;
+    background-color: var(--secondary-accent);
+    color: var(--primary-white);
+
+    ::before {
+        content: "${props => props.before}"
+    }
+
+    ::after {
+        content: "${props => props.after}"
+    }
+`
+
+const Nav = styled.ul`
+    margin-top: 5em;
+    list-style-type: none;
+    display: inline-block;
+`
 
 export default ({ data, pageContext }) => {
     const { frontmatter, body, fields, excerpt } = data.mdx
@@ -40,24 +62,29 @@ export default ({ data, pageContext }) => {
             <h1>{frontmatter.title}</h1>
             <p>{frontmatter.date}</p>
             <MDXRenderer>{body}</MDXRenderer>
-            {previous === false ? null : (
-                <>
-                    {previous && (
-                        <Link to={previous.fields.slug}>
-                            <p>{previous.frontmatter.title}</p>
-                        </Link>
-                    )}
-                </>
-            )}
-            {next === false ? null : (
-                <>
-                    {next && (
-                        <Link to={next.fields.slug}>
-                            <p>{next.frontmatter.title}</p>
-                        </Link>
-                    )}
-                </>
-            )}
+            <Nav>
+
+                {previous === false ? null : (
+                    <>
+                        {previous && (
+                            <>
+                                <Link to={previous.fields.slug}>
+                                    <StyledNavButton before={"<  "}>{previous.frontmatter.title}</StyledNavButton>
+                                </Link>
+                            </>
+                        )}
+                    </>
+                )}
+                {next === false ? null : (
+                    <>
+                        {next && (
+                            <Link to={next.fields.slug}>
+                                <StyledNavButton after={"  >"}>{next.frontmatter.title}</StyledNavButton>
+                            </Link>
+                        )}
+                    </>
+                )}
+            </Nav>
         </Layout>
     )
 }

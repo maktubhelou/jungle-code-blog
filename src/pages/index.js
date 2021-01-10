@@ -14,6 +14,10 @@ const Image = styled(Img)`
   border-radius: 5px;
 `;
 
+const Date = styled.p`
+  font-style: italic;
+`
+
 export default ({ data }) => {
   const {
     description,
@@ -45,7 +49,7 @@ export default ({ data }) => {
                 />
               ) : null}
               <h1>{frontmatter.title}</h1>
-              <p>{frontmatter.date}</p>
+              <Date>{frontmatter.date}</Date>
               <p>{excerpt}</p>
             </Link>
           </PostWrapper>

@@ -14,6 +14,7 @@ export const useSiteMetadata = () => {
                       siteLocale
                       twitterUsername
                       authorName
+                      authorBio
                   }
               }
           }

@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;500;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+
+
+:root {
+    --primary-dark: #003d34;
+    --secondary-dark: #00787a;
+    --primary-accent: #00b349;
+    --secondary-accent: #94ebd8;
+    --primary-white: #ffffff;
+}
+
+* { margin: 0; padding: 0 }
+
+html {
+    background-color: var(--primary-white);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+}
+
+h1 {
+    font-family: 'Inconsolata', monospace;
+    font-weight: 900;
+    color: var(--secondary-dark)
+}
+
+p {
+    margin: 2em 0;
+}
+
+ol, ul {
+    margin: 2em 0;
+    line-height: 1.7em;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-dark);
+    border-bottom: 2px solid var(--secondary-accent)
+}
