@@ -1,7 +1,7 @@
 {
   "name": "jungle-code",
   "version": "1.0.0",
-  "description": "",
+  "description": "A fun blog about my coding journey, not to be taken too seriously. Just a playground, really.",
   "main": "index.js",
   "scripts": {
     "dev": "gatsby develop -p 9988 -o",
