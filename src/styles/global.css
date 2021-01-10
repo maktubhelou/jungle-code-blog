@@ -31,6 +31,11 @@ p {
 ol, ul {
     margin: 2em 0;
     line-height: 1.7em;
+    padding-left: 1.5rem;
+}
+
+ol, ul ::marker {
+    color: var(--secondary-accent);
 }
 
 a {

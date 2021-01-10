@@ -10,13 +10,17 @@ const StyledH1 = styled.h1`
   font-size: 8em;
 
   @media screen and (max-width: 600px) {
-    font-size: 6em;
+    font-size: 4em;
   }
 `
 
 const StyledP = styled.p`
   color: var(--primary-white);
   font-size: 2em;
+
+  @media screen and (max-width: 600px) {
+    font-size: 1.5em;
+  }
 `
 
 export const Hero = ({ siteTitle, siteDescription, className }) => {
