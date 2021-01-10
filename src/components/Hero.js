@@ -10,7 +10,7 @@ const StyledH1 = styled.h1`
   font-size: 8em;
 
   @media screen and (max-width: 600px) {
-    font-size: 4em;
+    font-size: 3em;
   }
 `
 
@@ -19,7 +19,9 @@ const StyledP = styled.p`
   font-size: 2em;
 
   @media screen and (max-width: 600px) {
-    font-size: 1.5em;
+    font-size: 1em;
+    padding: 0;
+    margin: 0;
   }
 `
 
@@ -63,7 +65,8 @@ const StyledHero = styled(Hero)`
   align-items: flex-end;
 
   @media screen and (max-width: 600px) {
-    height 100vh;
+    height: 100%;
+    padding: 1rem;
   }
 `
 
