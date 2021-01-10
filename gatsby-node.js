@@ -8,17 +8,17 @@ exports.createPages = ({ actions, graphql }) => {
     )
 
     return graphql(`
-    {
+    {        
         allMdx(
             sort: { fields: [frontmatter___date], order: DESC }
             filter: { frontmatter: { published: { eq: true } } }
         ) {
             nodes {
-            fields {
-                slug
-            }
-            frontmatter {
-                title
+                fields {
+                    slug
+                }
+                frontmatter {
+                    title
                 }
             }
         }
