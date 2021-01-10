@@ -61,6 +61,10 @@ const StyledHero = styled(Hero)`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
+  @media screen and (max-width: 600px) {
+    height 100vh;
+  }
 `
 
 export default StyledHero;
